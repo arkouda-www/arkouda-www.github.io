@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Mockup</title>
+        <meta charset="utf-8">
         <style>
         body {
             font-family: sans-serif;
-            background-color: white;
+            background-color: whitesmoke;
             /* background-color: #ffd1a0; */
+
+            /* 
+            background-image: url("./squares.svg");
+            */
+            background-image: url("./stars.svg");
+            background-size: 10%;
+            background-repeat: repeat;
+
+            margin: 0;
+        }
+
+        body > hr {
+            margin: 0;
         }
 
         #arkouda-logo {
@@ -24,16 +39,20 @@
         section {
             max-width: 1000px;
             margin: auto;
-            margin-top: 50px;
+            margin-bottom: 30px;
         }
 
         #example-section {
+            margin-top: 75px;
+            margin-bottom: 75px;
+        }
+
+        .side-by-side {
             display: flex;
             align-items: stretch;
         }
 
         #logo-and-tagline {
-            flex-basis: 0;
             background-color: white;
             padding: 15px;
             border-radius: 5px;
@@ -50,6 +69,7 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            background-color: white;
         }
 
         #code-example .code {
@@ -89,6 +109,93 @@
         .mode .name {
             font-weight: bold;
             margin-bottom: 2px;
+        }
+
+        .white-background {
+            background-color: white;
+            width: 100%;
+            padding: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            text-decoration-color: #aacfb8;
+            text-decoration-thickness: 4px;
+            color: black;
+            text-underline-offset: 3px;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid grey;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px;
+            box-shadow: var(--button-ofsset) var(--button-ofsset) 0px var(--button-color);
+            transition: box-shadow 0.2s;
+
+            --button-ofsset: 4px;
+            --button-color: grey;
+        }
+
+        a.button.primary {
+            --button-color: #aacfb8;
+        }
+
+        a.button:hover {
+            --button-ofsset: 6px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        div.diff {
+            font-family: monospace;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+
+        div.diff .line {
+            display: block;
+            line-height: 1.5;
+        }
+
+        div.diff .line::before {
+            content: '\00a0\00a0';
+            color: grey;
+            margin-left: 5px;
+        }
+
+        div.diff .line.add {
+            background-color: #c8ffb8;
+        }
+
+        div.diff .line.remove {
+            background-color: #faa;
+        }
+
+        div.diff .line.add::before {
+            content: '+\00a0';
+        }
+
+        div.diff .line.remove::before {
+            content: '-\00a0';
         }
 
 
@@ -132,11 +239,11 @@
         }
 
         input:checked + .slider {
-            background-color: #2196F3;
+            background-color: #aacfb8;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #2196F3;
+            box-shadow: 0 0 1px #aacfb8;
         }
 
         input:checked + .slider:before {
@@ -163,50 +270,165 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <!-- and it's easy to individually load additional languages -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>hljs.highlightAll();</script>
     </head>
     <body>
         <section id="example-section">
-            <div id="logo-and-tagline">
-                <img id="arkouda-logo" src="./arkouda-bear-export.svg">
-                </img>
-                <h1>αρκούδα</h1>
-                <span id="tagline">
-                    Massive scale data science,<br>
-                    from the comfort of your REPL
-                </span>
-            </div>
-
-            <div id="code-example">
-                <div class="mode-selection">
-                    <div class="mode">
-                        <span class="name">Arkouda</span>
-                        <span class="description">Ready for supercomputers</span>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox"/>
-                        <span class="slider round"></span>
-                    </label>
-                    <div class="mode">
-                        <span class="name">NumPy</span>
-                        <span class="description">Industry-standard but local</span>
-                    </div>
+            <div class="side-by-side">
+                <div id="logo-and-tagline">
+                    <img id="arkouda-logo" src="./arkouda-bear-export.svg">
+                    </img>
+                    <h1>αρκούδα</h1>
+                    <span id="tagline">
+                        Massive scale data science,<br>
+                        from the comfort of your notebook
+                    </span>
                 </div>
-                <hr/>
-<pre class="code"><code class="language-python">import arkouda as ak
+
+                <div id="code-example">
+                    <div class="mode-selection">
+                        <div class="mode">
+                            <span class="name">Arkouda</span>
+                            <span class="description">Ready for supercomputers</span>
+                        </div>
+                        <label class="switch">
+                            <input id="comparison-switch" type="checkbox" checked/>
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="mode">
+                            <span class="name">NumPy</span>
+                            <span class="description">Industry-standard</span>
+                        </div>
+                    </div>
+                    <hr/>
+<pre class="code" id="arkouda-version" ><code class="language-python">import arkouda as ak
 
 ak.startup('localhost', 5555)
 
-# Generate two huge arrays
+# Generate two large arrays
 a = ak.randint(0,2**32,2**10)
 b = ak.randint(0,2**32,2**10)
 
+# add them
+c = a + b
+
 # Sort the array and print first 10 elements
-ak.sort(a)
-print(a[0:10])
+ak.sort(c)
+print(c[0:10])
 </code></pre>
-                <hr/>
+<pre class="code" id="numpy-version"><code class="language-python">import numpy as np
+
+
+
+# Generate two large arrays
+a = np.random.randint(0,2**32,2**10)
+b = np.random.randint(0,2**32,2**10)
+
+# add them
+c = a + b
+
+# Sort the array and print first 10 elements
+ak.sort(c)
+print(c[0:10])
+</code></pre>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="#" class="button primary">Get Started</a>
+                <a href="#" class="button">Documentation</a>
             </div>
         </section>
+        <hr/>
+        <div class="white-background">
+            <section>
+                <h2>Make the most of your hardware</h2>
+                <p>Arkouda is powered by <a href="https://chapel-lang.org">Chapel</a>, a programming language built from the ground up to support parallelism and distributed computing.
+                This allows it to make the most out of every core and every node in your arsenal.
+                </p>
+                <div class="side-by-side">
+                    <div style="flex-grow: 1; margin-right: 10px">
+                        <canvas id="scaling-graph"></canvas>
+                    </div>
+                    <div>
+                        <p>Source: <a href="https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03">Arkouda <code>argsort</code> Benchmark</a></p>
+                        <p>Hardware Configuration: <a href="https://buy.hpe.com/us/en/compute/sgi-system/sgi-8600-system/sgi-8600-system/hpe-sgi-8600-system/p/1010032504">HPE SGI 8600</a>:
+                            <ul>
+                                <li>EDR-100 InfiniBand network</li>
+                                <li>40-core Cascade Lake (dual-socket Intel Xeon Gold 6242R)</li>
+                                <li>192 GB RAM</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Interactively analyze large datasets</h2>
+                <p>By distributing your data across multiple nodes, Arkouda allows you to rapidly transform and wrangle
+                datasets that are simply intractable for a laptop or desktop.</p>
+                <div class="side-by-side">
+                    <div c
+                </div>
+            </section>
+            <section style="height: 800px">
+                <h2>Write familiar Python code</h2>
+                <p>Arkouda's library functions deliberately mirror those of NumPy and Pandas, so you can get started with minimal learning curve.
+                </p>
+
+                <div class="diff">
+                    <span class="line"># Generate two large arrays</span>
+                    <span class="line remove">a = np.random.randint(0,2**32,2**10)</span>
+                    <span class="line remove">b = np.random.randint(0,2**32,2**10)</span>
+                    <span class="line add">a = ak.randint(0,2**32,2**10)</span>
+                    <span class="line add">b = ak.randint(0,2**32,2**10)</span>
+                    <span class="line"></span>
+                    <span class="line"># add them</span>
+                    <span class="line">c = a + b</span>
+                    <span class="line"></span>
+                    <span class="line"># Sort the array and print first 10 elements</span>
+                    <span class="line">ak.sort(c)</span>
+                    <span class="line">print(c[0:10])</span>
+                </div>
+            </section>
+        </div>
     </body>
+        <script>
+            const cmpSwitch = document.getElementById("comparison-switch");
+            const update = () => { document.getElementById('arkouda-version').classList.toggle('hidden', !cmpSwitch.checked); document.getElementById('numpy-version').classList.toggle('hidden', cmpSwitch.checked); };
+            cmpSwitch.onchange = update;
+            update();
+
+            const scalingGraph = document.getElementById('scaling-graph');
+            new Chart(scalingGraph, {
+                type: 'line',
+                data: {
+                    labels: [1, 2, 4, 8, 16, 32, 64, 128, 240],
+                    datasets: [{
+                        label: 'Average Rate (GB/s) When Sorting One Million Elements',
+                        data: [1.5959, 1.8311, 2.8216, 5.0059, 9.4029, 18.9857, 36.2431, 67.0669, 120.0836],
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'logarithmic',
+                            title: {
+                                display: true,
+                                text: 'Number of Nodes'
+                            }
+                        },
+                        y: {
+                            type: 'logarithmic',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Rate (GB/s)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
 </html>
