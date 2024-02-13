@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <title>Mockup</title>
+        <style>
+        body {
+            font-family: sans-serif;
+            background-color: white;
+            /* background-color: #ffd1a0; */
+        }
+
+        #arkouda-logo {
+            height: 300px;
+        }
+
+        #tagline {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        #example-section {
+            display: flex;
+            align-items: stretch;
+        }
+
+        #logo-and-tagline {
+            flex-basis: 0;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 4px 4px 0px #aacfb8;
+            border: 1px solid grey;
+            margin-right: 40px;
+        }
+
+        #code-example {
+            flex-grow: 1;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        #code-example .code {
+            flex-grow: 1;
+        }
+
+        #code-example code {
+            height: 100%;
+            box-sizing: border-box;
+            background: none;
+            font-size: 18px;
+        }
+
+        hr {
+            border: none;
+            width: 100%;
+            border-top: 1px solid grey;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .mode-selection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mode-selection > * {
+            margin-right: 15px;
+        }
+
+        .mode {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mode .name {
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+
+        /* Start CSS from w3 schools */
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            right: 2px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(-20px);
+            -ms-transform: translateX(-20px);
+            transform: translateX(-20px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 20px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* End CSS from w3 schools */
+
+        </style>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body>
+        <section id="example-section">
+            <div id="logo-and-tagline">
+                <img id="arkouda-logo" src="./arkouda-bear-export.svg">
+                </img>
+                <h1>αρκούδα</h1>
+                <span id="tagline">
+                    Massive scale data science,<br>
+                    from the comfort of your REPL
+                </span>
+            </div>
+
+            <div id="code-example">
+                <div class="mode-selection">
+                    <div class="mode">
+                        <span class="name">Arkouda</span>
+                        <span class="description">Ready for supercomputers</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox"/>
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="mode">
+                        <span class="name">NumPy</span>
+                        <span class="description">Industry-standard but local</span>
+                    </div>
+                </div>
+                <hr/>
+<pre class="code"><code class="language-python">import arkouda as ak
+
+ak.startup('localhost', 5555)
+
+# Generate two huge arrays
+a = ak.randint(0,2**32,2**10)
+b = ak.randint(0,2**32,2**10)
+
+# Sort the array and print first 10 elements
+ak.sort(a)
+print(a[0:10])
+</code></pre>
+                <hr/>
+            </div>
+        </section>
+    </body>
+</html>
