@@ -5,18 +5,42 @@
         <meta charset="utf-8">
         <style>
         body {
-            font-family: sans-serif;
-            background-color: whitesmoke;
-            /* background-color: #ffd1a0; */
+            --border: 1px solid var(--border-color);
+            --body-background: url("./stars.svg");
+            --body-background-size: 10%;
 
-            /* 
-            background-image: url("./squares.svg");
-            */
-            background-image: url("./stars.svg");
-            background-size: 10%;
+
+            font-family: sans-serif;
+            background-color: var(--body-color);
+
+            background-image: var(--body-background);
+            background-size: var(--body-background-size);
             background-repeat: repeat;
 
             margin: 0;
+        }
+
+        body.squares {
+            --body-background: url("./squares.svg");
+            --body-background-size: 3%;
+        }
+
+        body.alt1 {
+            --primary-color: #aacfb8;
+            --border-color: grey;
+            --body-color: whitesmoke;
+        }
+
+        body.alt2 {
+            --primary-color: #f05076;
+            --border-color: white;
+            --body-color: #342c33;
+        }
+
+        body.alt3 {
+            --primary-color: #50b4f0;
+            --border-color: white;
+            --body-color: #2c2c34;
         }
 
         body > hr {
@@ -56,8 +80,8 @@
             background-color: white;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 4px 4px 0px #aacfb8;
-            border: 1px solid grey;
+            box-shadow: 4px 4px 0px var(--primary-color);
+            border: var(--border);
             margin-right: 40px;
         }
 
@@ -65,7 +89,7 @@
             flex-grow: 1;
             padding: 15px;
             border-radius: 5px;
-            border: 1px solid grey;
+            border: var(--border);
             display: flex;
             flex-direction: column;
             align-items: stretch;
@@ -122,7 +146,7 @@
         }
 
         a {
-            text-decoration-color: #aacfb8;
+            text-decoration-color: var(--primary-color);
             text-decoration-thickness: 4px;
             color: black;
             text-underline-offset: 3px;
@@ -133,7 +157,7 @@
             padding: 15px;
             border-radius: 5px;
             background-color: white;
-            border: 1px solid grey;
+            border: var(--border);
             display: inline-block;
             font-size: 20px;
             margin: 10px;
@@ -145,7 +169,7 @@
         }
 
         a.button.primary {
-            --button-color: #aacfb8;
+            --button-color: var(--primary-color);
         }
 
         a.button:hover {
@@ -239,11 +263,11 @@
         }
 
         input:checked + .slider {
-            background-color: #aacfb8;
+            background-color: var(--primary-color);
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #aacfb8;
+            box-shadow: 0 0 1px var(--primary-color);
         }
 
         input:checked + .slider:before {
@@ -429,5 +453,21 @@ print(c[0:10])
                     }
                 }
             });
+
+            // Debugging stuff
+
+            function setAlt(n) {
+                document.body.className = `alt${n}`;
+            }
+
+            setAlt(1);
+            document.onkeypress = (e) => {
+                console.log(e.key);
+                if (e.key === '1' || e.key === '2' || e.key === '3') {
+                    setAlt(e.key);
+                } else if (e.key == 's') {
+                    document.body.classList.toggle('squares');
+                }
+            }
         </script>
 </html>
