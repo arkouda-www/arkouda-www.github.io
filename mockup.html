@@ -27,18 +27,21 @@
 
         body.alt1 {
             --primary-color: #aacfb8;
+            --text-color: black;
             --border-color: grey;
             --body-color: whitesmoke;
         }
 
         body.alt2 {
             --primary-color: #f05076;
+            --text-color: white;
             --border-color: white;
             --body-color: #342c33;
         }
 
         body.alt3 {
             --primary-color: #50b4f0;
+            --text-color: white;
             --border-color: white;
             --body-color: #2c2c34;
         }
@@ -52,7 +55,10 @@
         }
 
         #tagline {
-            font-size: 20px;
+            font-size: 60px;
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-color);
         }
 
         h1 {
@@ -243,6 +249,40 @@
             padding-left: 15px;
         }
 
+        nav {
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 20px;
+            color: var(--text-color);
+            display: flex;
+        }
+
+        nav a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        nav a.logo-link {
+            font-size: 30px;
+        }
+
+        nav .spacer {
+            flex-grow: 1;
+        }
+
+        .nav-logo {
+            height: 60px;
+            padding: 10px;
+            border-radius: 25%;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            margin-right: 10px;
+        }
+
 
         /* Start CSS from w3 schools */
 
@@ -319,18 +359,22 @@
         <script>hljs.highlightAll();</script>
     </head>
     <body>
+        <nav>
+            <a href="#" class="logo-link">
+                <img class="nav-logo" src="./arkouda-bear-export.svg" alt="Arkouda Bear">
+                αρκούδα
+            </a>
+            <span class="spacer"></span>
+            <a href="#">github</a>
+            <a href="#">documentation</a>
+            <a href="#">gitter</a>
+            <a href="#">discourse</a>
+        </nav>
+        <section id="tagline">
+            Massive scale data science,<br>
+            from the comfort of your notebook
+        </section>
         <section id="example-section">
-            <div class="side-by-side">
-                <div id="logo-and-tagline">
-                    <img id="arkouda-logo" src="./arkouda-bear-export.svg">
-                    </img>
-                    <h1>αρκούδα</h1>
-                    <span id="tagline">
-                        Massive scale data science,<br>
-                        from the comfort of your notebook
-                    </span>
-                </div>
-
                 <div id="code-example">
                     <div class="mode-selection">
                         <div class="mode">
@@ -378,7 +422,6 @@ ak.sort(c)
 print(c[0:10])
 </code></pre>
                 </div>
-            </div>
 
             <div class="buttons">
                 <a href="#" class="button primary">Get Started</a>
