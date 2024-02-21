@@ -3,6 +3,7 @@
     <head>
         <title>Mockup</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
         body {
             --border: 1px solid var(--border-color);
@@ -355,6 +356,16 @@
             font-size: 20px;
         }
 
+        .can-section {
+            border: 1px solid lightgrey;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        section:not(section section) {
+            margin-bottom: 100px;
+        }
+
         /* Start CSS from w3 schools */
 
         .switch {
@@ -440,6 +451,8 @@
             <a href="#">documentation</a>
             <a href="#">gitter</a>
             <a href="#">discourse</a>
+            <a href="#">community</a>
+            <a href="#">about</a>
         </nav>
         <section id="tagline">
             Massive scale data science,<br>
@@ -554,12 +567,12 @@ print(c[0:10])
             <section>
                 <h2>With Arkouda you can...</h2>
                     <div class="indented">
-                    <section>
-                        <h3>...make the most of your hardware</h3>
+                    <section class="can-section">
+                        <h3>Make the most of your hardware</h3>
                         <p>Arkouda is powered by <a href="https://chapel-lang.org">Chapel</a>, a programming language built from the ground up to support parallelism and distributed computing.
                         This allows it to make the most out of every core and every node in your arsenal.
                         </p>
-                        <div class="side-by-side">
+                        <div>
                             <div style="flex-grow: 1; margin-right: 10px">
                                 <canvas id="scaling-graph"></canvas>
                             </div>
@@ -575,16 +588,16 @@ print(c[0:10])
                             </div>
                         </div>
                     </section>
-                    <section>
-                        <h3>...interactively analyze large datasets</h3>
+                    <section class="can-section">
+                        <h3>Interactively analyze large datasets</h3>
                         <p>By distributing your data across multiple nodes, Arkouda allows you to rapidly transform and wrangle
                         datasets that are simply intractable for a laptop or desktop.</p>
                         <img src="./arkouda-process.svg">
                         </img>
                     </section>
 
-                    <section>
-                        <h3>...write familiar Python code</h3>
+                    <section class="can-section">
+                        <h3>Write familiar Python code</h3>
                         <p>Arkouda's library functions deliberately mirror those of NumPy and Pandas, so you can get started with minimal learning curve.
                         </p>
                         <div class="diff">
@@ -620,7 +633,7 @@ print(c[0:10])
                     datasets: [{
                         label: 'Average Rate (GB/s) When Sorting One Million Elements',
                         data: [1.5959, 1.8311, 2.8216, 5.0059, 9.4029, 18.9857, 36.2431, 67.0669, 120.0836],
-                        borderWidth: 3
+                        borderWidth: 5
                     }]
                 },
                 options: {
