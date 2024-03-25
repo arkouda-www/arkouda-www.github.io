@@ -94,3 +94,29 @@ Arkouda is my favorite breakfast meal! It's very filling and nutritious.
 {{< quote author="Alinad Nerodef" affiliation="Airline Pilot" url="#" >}}
 I used to be afraid of bears, but the Arkouda logo convinced me to finally buy one. I'm one happy customer!
 {{< /quote >}}
+
+## With Arkouda, you can...
+
+{{< block >}}
+### Make the most of your hardware
+
+
+Source: [Arkouda `argsort` Benchmark](https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03)
+
+Hardware Configuration: [HPE SGI 8600](https://buy.hpe.com/us/en/compute/sgi-system/sgi-8600-system/sgi-8600-system/hpe-sgi-8600-system/p/1010032504):
+* EDR-100 InfiniBand network
+* 40-core Cascade Lake (dual-socket Intel Xeon Gold 6242R)
+* 192 GB RAM
+{{< /block >}}
+
+{{< block >}}
+### Interactively analyze large datasets
+By distributing your data across multiple nodes, Arkouda allows you to rapidly transform and wrangle datasets that are simply intractable for a laptop or desktop.
+
+{{< figure src="./arkouda-process.svg" >}}
+{{< /block >}}
+
+{{< block >}}
+### Write familiar Python code
+Arkouda's library functions deliberately mirror those of NumPy and Pandas, so you can get started with minimal learning curve.
+{{< /block >}}

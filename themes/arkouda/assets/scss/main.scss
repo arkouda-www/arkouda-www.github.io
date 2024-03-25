@@ -368,8 +368,12 @@ blockquote {
     }
 }
 
-.can-section {
+.block {
     border: 1px solid lightgrey;
     padding: 15px;
     border-radius: 5px;
+}
+
+figure img {
+    width: 100%;
 }
