@@ -20,14 +20,6 @@ body {
     --button-color: lightgrey;
 }
 
-body > hr {
-    margin: 0;
-}
-
-#arkouda-logo {
-    height: 300px;
-}
-
 #tagline {
     font-size: 60px;
     text-align: center;
@@ -54,23 +46,9 @@ section:not(section section) {
     margin-bottom: 100px;
 }
 
-#example-section {
+#example {
     margin-top: 75px;
     margin-bottom: 50px;
-}
-
-.side-by-side {
-    display: flex;
-    align-items: stretch;
-}
-
-#logo-and-tagline {
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 0px var(--primary-color);
-    border: var(--border);
-    margin-right: 40px;
 }
 
 .code-example {
@@ -334,6 +312,11 @@ nav {
     flex-direction: column;
 
     h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p {
         margin-top: 10px;
         margin-bottom: 10px;
     }
