@@ -1,5 +1,9 @@
 <blockquote>
-  {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  <div class="quote-wrapper">
+    <span class="open-quote">“</span>
+    <div class="quote-content">{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+    <span class="close-quote">”</span>
+  </div>
   <footer>
     {{ .Get "author" }}, <a {{ with (.Get "url") }}href="{{ . }}"{{ end }}>{{ .Get "affiliation" }}</a>
   </footer>

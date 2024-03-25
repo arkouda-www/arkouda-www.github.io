@@ -346,45 +346,43 @@ nav {
 
 blockquote {
     margin-bottom: 40px;
-}
 
-blockquote p {
-    font-size: 25px;
-    padding: 15px;
-    border: 1px solid #cecece;
-    box-shadow: 5px 5px 0px whitesmoke;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+    div.quote-wrapper {
+        font-size: 25px;
+        padding: 15px;
+        border: 1px solid #cecece;
+        box-shadow: 5px 5px 0px whitesmoke;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
-blockquote p span.text-content {
-    flex-grow: 1;
-}
+    div.quote-content {
+        flex-grow: 1;
+    }
 
-blockquote p::before {
-    content: '“';
-    font-size: 70px;
-    margin-right: 20px;
-    vertical-align: middle;
-}
+    span.open-quote {
+        font-size: 70px;
+        margin-right: 20px;
+        vertical-align: middle;
+    }
 
-blockquote p::after {
-    content: '”';
-    font-size: 70px;
-    margin-left: 20px;
-    vertical-align: middle;
-}
+    span.close-quote {
+        font-size: 70px;
+        margin-left: 20px;
+        vertical-align: middle;
+    }
 
-blockquote footer::before {
-    content: '— ';
-    font-size: 20px;
-}
+    footer::before {
+        content: '— ';
+        font-size: 20px;
+    }
 
-blockquote footer {
-    font-size: 20px;
+    footer {
+        font-size: 20px;
+    }
 }
 
 .can-section {
