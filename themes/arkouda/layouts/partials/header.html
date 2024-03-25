@@ -1,2 +1,11 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<nav>
+  <a href="#" class="logo-link">
+      <img class="nav-logo" src="./arkouda-bear-export.svg" alt="Arkouda Bear">
+      Arkouda
+  </a>
+  <span class="spacer"></span>
+
+  {{ range (index site.Menus "main") }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+</nav>

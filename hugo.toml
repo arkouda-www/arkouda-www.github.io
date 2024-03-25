@@ -1,4 +1,34 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Arkouda'
 theme = "arkouda"
+
+[[menus.main]]
+name = 'GitHub'
+url = 'https://github.com/bears-r-us/arkouda'
+weight = 10
+
+[[menus.main]]
+name = 'Documentation'
+url = 'https://bears-r-us.github.io/arkouda/'
+weight = 20
+
+[[menus.main]]
+name = 'Gitter'
+url = 'https://gitter.im/ArkoudaProject/community'
+weight = 30
+
+[[menus.main]]
+name = 'Discourse'
+url = '#'
+weight = 40
+
+[[menus.main]]
+name = 'Community'
+url = '#'
+weight = 50
+
+[[menus.main]]
+name = 'About'
+url = '/about'
+weight = 60
