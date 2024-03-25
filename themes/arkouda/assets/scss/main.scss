@@ -20,6 +20,13 @@ body {
     --button-color: lightgrey;
 }
 
+@mixin stylized-shadow($color, $offset: 4px) {
+    border: var(--border);
+    border-radius: 5px;
+    box-shadow: $offset $offset 0px $color;
+    transition: box-shadow 0.2s;
+}
+
 #tagline {
     font-size: 60px;
     text-align: center;
@@ -55,7 +62,6 @@ section:not(section section) {
     flex-grow: 1;
     padding: 15px;
     border-radius: 5px;
-    border: var(--border);
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -159,17 +165,14 @@ a {
 a.button {
     text-decoration: none;
     padding: 15px;
-    border-radius: 5px;
     background-color: white;
-    border: var(--border);
     display: inline-flex;
     align-items: center;
     font-size: 20px;
     margin: 10px;
-    box-shadow: var(--button-ofsset) var(--button-ofsset) 0px var(--button-color);
-    transition: box-shadow 0.2s;
 
     --button-ofsset: 4px;
+    @include stylized-shadow(var(--button-color), var(--button-ofsset));
 }
 
 a.button img {
@@ -242,10 +245,9 @@ div.diff .line.remove::before {
 
 .news-banner {
     padding: 15px;
-    border-radius: 5px;
-    border: var(--border);
     background-color: white;
-    box-shadow: 4px 4px 0px var(--primary-color);
+
+    @include stylized-shadow(var(--primary-color));
 }
 
 .indented {
@@ -303,13 +305,13 @@ nav {
     flex-basis: 0;
     flex-grow: 1;
     padding: 15px;
-    border: 1px solid #cecece;
     margin: 10px;
-    border-radius: 2px;
-    box-shadow: 5px 5px 0px whitesmoke;
     text-align: center;
     display: flex;
     flex-direction: column;
+
+    @include stylized-shadow(whitesmoke);
+    border-color: #cecece;
 
     h3 {
         margin-top: 10px;
@@ -333,13 +335,14 @@ blockquote {
     div.quote-wrapper {
         font-size: 25px;
         padding: 15px;
-        border: 1px solid #cecece;
-        box-shadow: 5px 5px 0px whitesmoke;
         margin-top: 15px;
         margin-bottom: 15px;
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        @include stylized-shadow(whitesmoke);
+        border-color: #cecece;
     }
 
     div.quote-content {
@@ -369,9 +372,10 @@ blockquote {
 }
 
 .block {
-    border: 1px solid lightgrey;
     padding: 15px;
-    border-radius: 5px;
+
+    @include stylized-shadow(whitesmoke);
+    border-color: lightgrey;
 }
 
 figure img {
