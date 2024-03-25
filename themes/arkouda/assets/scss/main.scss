@@ -209,7 +209,7 @@ div.diff {
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
 }
 
 div.diff .line {
@@ -220,8 +220,8 @@ div.diff .line {
 
 div.diff .line::before {
     content: '\00a0\00a0';
-    color: grey;
-    margin-left: 5px;
+    color: black;
+    margin-right: 10px;
 }
 
 div.diff .line.add {

@@ -1,0 +1,1 @@
+<div class="diff">{{ range (split (trim .Inner "\n") "\n") }}{{ if eq (substr . 0 1) "+" }}<span class="line add">{{ substr . 1 }}</span>{{ else if eq (substr . 0 1) "-" }}<span class="line remove">{{ substr . 1 }}</span>{{ else }}<span class="line">{{ substr . 1 }}</span>{{ end }}{{ end }}</div>
