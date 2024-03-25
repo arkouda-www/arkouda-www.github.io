@@ -31,5 +31,18 @@
     </div>
   </section>
 
-  {{ .Content }}
+  {{ with .Params.announcement }}
+    <section>
+      <div class="news-banner" id="news-banner">
+        <h2>{{ .title }}</h2>
+        {{ .content | markdownify }}
+      </div>
+    </section>
+  {{ end }}
+
+  <div class="white-background">
+    <section>
+      {{ .Content }}
+    </section>
+  </div>
 {{ end }}

@@ -328,12 +328,17 @@ nav {
     text-align: center;
     display: flex;
     flex-direction: column;
+
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p:nth-child(2) {
+        flex-grow: 1;
+    }
 }
 
-.rect h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 blockquote {
     margin-bottom: 40px;
