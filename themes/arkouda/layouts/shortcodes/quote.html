@@ -1,0 +1,6 @@
+<blockquote>
+  {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  <footer>
+    {{ .Get "author" }}, <a {{ with (.Get "url") }}href="{{ . }}"{{ end }}>{{ .Get "affiliation" }}</a>
+  </footer>
+</blockquote>
