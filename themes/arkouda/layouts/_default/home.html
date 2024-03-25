@@ -1,7 +1,35 @@
 {{ define "main" }}
+  <section id="tagline">
+    {{ .Params.tagline | safeHTML }}
+  </section>
+
+  <section id="example-section">
+    <div class="code-example" id="first-comparison">
+      <fieldset>
+        {{ range .Params.codes }}
+          <div class="sample-wrapper">
+            <input type="radio" id="radio-{{ .name }}" value="{{ .name }}" name="code-sample" {{ if eq .name "Arkouda" }}checked{{ end }}></inpt>
+            <label class="sample" for="radio-{{ .name }}">
+              <span class="name">{{ .name }}</span>
+              <span class="description">{{ .title }}</span>
+            </label>
+          </div>
+        {{ end }}
+      </fieldset>
+      <hr/>
+
+      {{ range .Params.codes }}
+        <div class="code sample" data-for-sample="{{ .name }}">{{ highlight .code "Python" "style=github" }}</div>
+      {{ end }}
+    </div>
+    <script>setupCodeSample("first-comparison");</script>
+
+    <div class="buttons">
+      {{ range .Params.buttons }}
+        <a href="{{ .url }}" class="button{{ if .primary }} primary{{ end }}">{{ if .icon }}{{ partial "icon" .icon }}{{ end }}{{ .name }}</a>
+      {{ end }}
+    </div>
+  </section>
+
   {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
 {{ end }}
