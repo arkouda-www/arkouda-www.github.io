@@ -173,18 +173,18 @@ a.button {
 
     --button-ofsset: 4px;
     @include stylized-shadow(var(--button-color), var(--button-ofsset));
-}
 
-a.button img {
-    margin-right: 10px;
-}
+    img {
+        margin-right: 10px;
+    }
 
-a.button.primary {
-    --button-color: var(--primary-color);
-}
+    &.primary {
+        --button-color: var(--primary-color);
+    }
 
-a.button:hover {
-    --button-ofsset: 6px;
+    &:hover {
+        --button-ofsset: 6px;
+    }
 }
 
 .buttons {
@@ -213,34 +213,34 @@ div.diff {
     padding-bottom: 10px;
     border-radius: 5px;
     border: 1px solid lightgrey;
-}
 
-div.diff .line {
-    display: block;
-    line-height: 1.5;
-    background-color: white;
-}
+    .line {
+        display: block;
+        line-height: 1.5;
+        background-color: white;
 
-div.diff .line::before {
-    content: '\00a0\00a0';
-    color: black;
-    margin-right: 10px;
-}
+        &::before {
+            content: '\00a0\00a0';
+            color: black;
+            margin-right: 10px;
+        }
 
-div.diff .line.add {
-    background-color: #c8ffb8;
-}
+        &.add {
+            background-color: #c8ffb8;
 
-div.diff .line.remove {
-    background-color: #faa;
-}
+            &::before {
+                content: '+\00a0';
+            }
+        }
 
-div.diff .line.add::before {
-    content: '+\00a0';
-}
+        &.remove {
+            background-color: #faa;
 
-div.diff .line.remove::before {
-    content: '-\00a0';
+            &::before {
+                content: '-\00a0';
+            }
+        }
+    }
 }
 
 .news-banner {
