@@ -100,6 +100,7 @@ I used to be afraid of bears, but the Arkouda logo convinced me to finally buy o
 {{< block >}}
 ### Make the most of your hardware
 
+{{< graph >}}
 
 Source: [Arkouda `argsort` Benchmark](https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03)
 

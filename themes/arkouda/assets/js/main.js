@@ -20,4 +20,39 @@ function setupCodeSample(id) {
   }
 }
 
+function loadGraph(id) {
+  const scalingGraph = document.getElementById(id);
+  new Chart(scalingGraph, {
+      type: 'line',
+      data: {
+          labels: [1, 2, 4, 8, 16, 32, 64, 128, 240],
+          datasets: [{
+              label: 'Average Rate (GB/s) When Sorting One Million Elements',
+              data: [1.5959, 1.8311, 2.8216, 5.0059, 9.4029, 18.9857, 36.2431, 67.0669, 120.0836],
+              borderWidth: 5
+          }]
+      },
+      options: {
+          scales: {
+              x: {
+                  type: 'linear',
+                  title: {
+                      display: true,
+                      text: 'Number of Nodes'
+                  }
+              },
+              y: {
+                  type: 'linear',
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Rate (GB/s)'
+                  }
+              }
+          }
+      }
+  });
+}
+
 window.setupCodeSample = setupCodeSample;
+window.loadGraph = loadGraph;
