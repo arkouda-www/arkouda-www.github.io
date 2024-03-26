@@ -20,48 +20,48 @@ body {
     --button-color: lightgrey;
 }
 
-@mixin stylized-shadow($color, $offset: 4px) {
+@mixin stylized-shadow($color, $offset: 0.3rem) {
     border: var(--border);
-    border-radius: 5px;
-    box-shadow: $offset $offset 0px $color;
+    border-radius: 0.2em;
+    box-shadow: $offset $offset 0 $color;
     transition: box-shadow 0.2s;
 }
 
 #tagline {
-    font-size: 60px;
+    font-size: 4em;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3rem;
     color: var(--text-color);
 }
 
 h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 4em;
+    margin-bottom: 1em;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 2em;
 }
 
 section {
     max-width: 1000px;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
 }
 
 section:not(section section) {
-    margin-bottom: 100px;
+    margin-bottom: 6rem;
 }
 
 #example {
-    margin-top: 75px;
-    margin-bottom: 50px;
+    margin-top: 5em;
+    margin-bottom: 3em;
 }
 
 .code-example {
     flex-grow: 1;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 1em;
+    border-radius: 0.2em;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -77,12 +77,12 @@ section:not(section section) {
 
     input[type="radio"] {
         appearance: none;
-        margin-right: 15px;
+        margin-right: 1em;
 
-        border: 1px grey solid;
-        width: 14px;
-        height: 14px;
-        border-radius: 7px;
+        border: 0.075px solid grey;
+        width: 1em;
+        height: 1em;
+        border-radius: 0.5em;
 
         &:checked {
             background-color: var(--primary-color);
@@ -100,7 +100,7 @@ section:not(section section) {
         justify-content: center;
 
         &:not(:first-child) {
-            border-left: 1px solid grey;
+            border-left: 0.075rem solid grey;
         }
     }
 
@@ -111,7 +111,7 @@ section:not(section section) {
 
         .name {
             font-weight: bold;
-            margin-bottom: 2px;
+            margin-bottom: 0.02em;
         }
     }
 
@@ -125,7 +125,7 @@ section:not(section section) {
         height: 100%;
         box-sizing: border-box;
         background: none;
-        font-size: 18px;
+        font-size: 1.1em;
 
         display: block;
         overflow-x: auto;
@@ -136,18 +136,18 @@ section:not(section section) {
 hr {
     border: none;
     width: 100%;
-    border-top: 1px solid grey;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    border-top: 0.075rem solid grey;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .white-background {
+    padding-bottom: 1em;
     background-color: white;
-    padding: 15px;
     border-top: var(--border);
 
     h2:nth-child(n+2) {
-        margin-top: 100px;
+        margin-top: 5rem;
     }
 }
 
@@ -157,25 +157,25 @@ hr {
 
 a {
     text-decoration-color: var(--primary-color);
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 0.2em;
     color: black;
-    text-underline-offset: 0.4rem;
+    text-underline-offset: 0.4em;
 }
 
 a.button {
     text-decoration: none;
-    padding: 15px;
+    padding: 0.6em;
     background-color: white;
     display: inline-flex;
     align-items: center;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 1.3em;
+    margin: 0.8em;
 
-    --button-ofsset: 4px;
+    --button-ofsset: 0.3em;
     @include stylized-shadow(var(--button-color), var(--button-ofsset));
 
     img {
-        margin-right: 10px;
+        margin-right: 0.8em;
     }
 
     &.primary {
@@ -183,22 +183,22 @@ a.button {
     }
 
     &:hover {
-        --button-ofsset: 6px;
+        --button-ofsset: 0.4em;
     }
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1em;
 
     .feather {
-        width: 25px;
-        height: 25px;
+        width: 1.2em;
+        height: 1.2em;
         stroke: currentColor;
         stroke-width: 2;
         fill: none;
-        margin-right: 10px;
+        margin-right: 0.5em;
     }
 }
 
@@ -208,11 +208,11 @@ p {
 
 div.diff {
     font-family: monospace;
-    font-size: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid lightgrey;
+    font-size: 1.1em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    border-radius: 0.2em;
+    border: 0.075rem solid lightgrey;
 
     .line {
         display: block;
@@ -222,7 +222,7 @@ div.diff {
         &::before {
             content: '\00a0\00a0';
             color: black;
-            margin-right: 10px;
+            margin-right: 0.8em;
         }
 
         &.add {
@@ -244,20 +244,20 @@ div.diff {
 }
 
 .news-banner {
-    padding: 15px;
+    padding: 1em;
     background-color: white;
 
     @include stylized-shadow(var(--primary-color));
 }
 
 .indented {
-    padding-left: 15px;
+    padding-left: 1em;
 }
 
 nav {
     max-width: 1000px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 1.25em;
     color: var(--text-color);
     display: flex;
 
@@ -265,18 +265,16 @@ nav {
         display: inline-flex;
         align-items: center;
         color: var(--text-color);
-        font-size: 20px;
-        margin-right: 20px;
+        font-size: 1.2em;
+        margin-right: 1.5em;
         text-decoration-color: var(--primary-color);
-        text-decoration-thickness: 4px;
-        text-underline-offset: 7px;
 
         &:not(.logo-link) {
             text-transform: lowercase;
         }
 
         &.logo-link {
-            font-size: 30px;
+            font-size: 2rem;
             text-decoration: none;
         }
     }
@@ -287,12 +285,12 @@ nav {
 }
 
 .nav-logo {
-    height: 60px;
-    padding: 10px;
+    height: 2em;
+    padding: 0.25em;
     border-radius: 25%;
     background-color: white;
-    border: 1px solid var(--border-color);
-    margin-right: 10px;
+    border: 0.075em solid var(--border-color);
+    margin-right: 0.8em;
 }
 
 .rect-list {
@@ -304,8 +302,8 @@ nav {
 .rect {
     flex-basis: 0;
     flex-grow: 1;
-    padding: 15px;
-    margin: 10px;
+    padding: 1em;
+    margin: 0.6em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -314,13 +312,13 @@ nav {
     border-color: #cecece;
 
     h3 {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 0.6em;
+        margin-bottom: 0.6em;
     }
 
     p {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 0.6em;
+        margin-bottom: 0.6em;
     }
 
     p:nth-child(2) {
@@ -330,13 +328,13 @@ nav {
 
 
 blockquote {
-    margin-bottom: 40px;
+    margin-bottom: 2.4em;
 
     div.quote-wrapper {
-        font-size: 25px;
-        padding: 15px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        font-size: 1.6em;
+        padding: 0.7em;
+        margin-top: 0.7em;
+        margin-bottom: 0.7em;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -350,32 +348,36 @@ blockquote {
     }
 
     span.open-quote {
-        font-size: 70px;
-        margin-right: 20px;
+        font-size: 3em;
+        margin-right: 0.2em;
         vertical-align: middle;
     }
 
     span.close-quote {
-        font-size: 70px;
-        margin-left: 20px;
+        font-size: 3em;
+        margin-left: 0.2em;
         vertical-align: middle;
     }
 
     footer::before {
         content: '— ';
-        font-size: 20px;
+        font-size: 1.2em;
     }
 
     footer {
-        font-size: 20px;
+        font-size: 1.2em;
     }
 }
 
 .block {
-    padding: 15px;
+    padding: 1em;
 
     @include stylized-shadow(whitesmoke);
     border-color: lightgrey;
+
+    h3 {
+        margin-top: 0.6em;
+    }
 }
 
 figure img {
