@@ -1,4 +1,6 @@
-{{- with resources.Get "scss/main.scss" | toCSS }}
+{{ $vars := dict "baseURL" .Site.BaseURL }}
+{{ $opts := dict "vars" $vars }}
+{{- with resources.Get "scss/main.scss" | toCSS $opts }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
