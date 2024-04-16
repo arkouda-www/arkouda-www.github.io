@@ -62,9 +62,9 @@ should look at.
 
 | I want to edit...                                | Relevant file and section                    | More details |
 |--------------------------------------------------|----------------------------------------------|--------------|
-| The navigation buttons at the top                | `hugo.toml`                                  | [Editing Hugo.toml](#) |
-| The big tagline, code blocks, or buttons         | `content/_index.md`, above the `---` divider | [Editing the Front Matter](#) |
-| The quotes, quick summary, or the lower sections | `content/_index.md`, below the `---` divider | [Editing the Markdown Content](#) |
+| The navigation buttons at the top                | `hugo.toml`                                  | [Editing Hugo.toml](#editing-hugotoml) |
+| The big tagline, code blocks, or buttons         | `content/_index.md`, above the `---` divider | [Editing the Front Matter](#editing-the-front-matter) |
+| The quotes, quick summary, or the lower sections | `content/_index.md`, below the `---` divider | [Editing the Markdown Content](#editing-the-markdown-content) |
 
 ### Editing `hugo.toml`
 
@@ -280,7 +280,7 @@ A shortcode has the following pieces:
   are they a part of").
 * The content of the shortcode: that's "Arkouda is my favorite...". This content
   is regular old Markdown, though it can contain other shortcodes
-  (see [Nesting shortcodes](#)).
+  (see [Nesting shortcodes](#nesting-shortcodes)).
 
 #### Available Shortcodes
 
