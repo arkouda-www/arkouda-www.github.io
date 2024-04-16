@@ -1,9 +1,17 @@
 @import "hugo:vars";
 
+$minimum-width: 1000px;
+
+@mixin below-container-width {
+    @media screen and (max-width: $minimum-width){
+        @content;
+    }
+}
+
 body {
     --border: 1px solid var(--border-color);
     --body-background: url(#{$baseURL + "/squares.svg"});
-    --body-background-size: 3%;
+    --body-background-size: 3rem;
 
 
     font-family: sans-serif;
@@ -34,11 +42,16 @@ body {
     text-align: center;
     margin-top: 3rem;
     color: var(--text-color);
+
+    @include below-container-width {
+        font-size: 2.5em;
+    }
 }
 
-h1 {
-    font-size: 4em;
-    margin-bottom: 1em;
+h2 {
+    @include below-container-width {
+        text-align: center;
+    }
 }
 
 h3 {
@@ -46,13 +59,21 @@ h3 {
 }
 
 section {
-    max-width: 1000px;
+    max-width: $minimum-width;
     margin: auto;
     margin-bottom: 3rem;
+
+    @include below-container-width {
+        margin-bottom: 1.5rem;
+    }
 }
 
 section:not(section section) {
     margin-bottom: 6rem;
+
+    @include below-container-width {
+        margin-bottom: 3rem;
+    }
 }
 
 #example {
@@ -202,6 +223,11 @@ a.button {
         fill: none;
         margin-right: 0.5em;
     }
+
+    @include below-container-width {
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }
 
 p {
@@ -257,7 +283,7 @@ div.diff {
 }
 
 nav {
-    max-width: 1000px;
+    max-width: $minimum-width;
     margin: auto;
     margin-top: 1.25em;
     color: var(--text-color);
@@ -280,6 +306,10 @@ nav {
             text-decoration: none;
         }
     }
+
+    @include below-container-width {
+        display: none;
+    }
 }
 
 .spacer {
@@ -299,6 +329,10 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    @include below-container-width {
+        flex-direction: column;
+    }
 }
 
 .rect {
@@ -379,6 +413,11 @@ blockquote {
 
     h3 {
         margin-top: 0.6em;
+    }
+
+    @include below-container-width {
+        border: none;
+        box-shadow: none;
     }
 }
 
