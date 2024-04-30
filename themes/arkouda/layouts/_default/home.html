@@ -1,4 +1,11 @@
 {{ define "main" }}
+  {{ if .Params.draft }}
+      <section id="draft">
+          Note: this version of the site is a draft, and contains unfinished
+          and placeholder content.
+      </section>
+  {{ end }}
+
   <section id="tagline">
     {{ .Params.tagline | safeHTML }}
   </section>
