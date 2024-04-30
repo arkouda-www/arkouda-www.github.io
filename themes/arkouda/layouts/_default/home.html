@@ -14,11 +14,13 @@
     <div class="code-example" id="first-comparison">
       <fieldset>
         {{ range .Params.codes }}
-          <div class="sample-wrapper">
-            <input type="radio" id="radio-{{ .name }}" value="{{ .name }}" name="code-sample" {{ if eq .name "Arkouda" }}checked{{ end }}></inpt>
-            <label class="sample" for="radio-{{ .name }}">
-              <span class="name">{{ .name }}</span>
-              <span class="description">{{ .title }}</span>
+          <div class="sample-wrapper-div">
+            <label class="sample-wrapper" for="radio-{{ .name }}">
+              <input type="radio" id="radio-{{ .name }}" value="{{ .name }}" name="code-sample" {{ if eq .name "Arkouda" }}checked{{ end }}>
+              <span class="sample">
+                <span class="name">{{ .name }}</span>
+                <span class="description">{{ .title }}</span>
+              </span>
             </label>
           </div>
         {{ end }}

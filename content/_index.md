@@ -44,19 +44,19 @@ codes:
 buttons:
     - name: "Get Started"
       primary: true
-      url: "#"
+      url: "#" # TODO: put link to Arkouda Demo here
     - name: "Documentation"
-      url: "#"
+      url: "https://bears-r-us.github.io/arkouda/"
     - name: "Chat on Gitter"
       icon: "message-square"
-      url: "#"
+      url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda 3.2.6 released!"
+    title: "Arkouda v2024.04.19 released!"
     content: |
-      The new release brings the `addOne` message, which significantly speeds up increment operations on large arrays!
+      The new release brings optimized Parquet `Strings` reads, which significantly speeds up  operations on data in `.parquet` files, along with more Array API functionality!
 
-      [Read the release notes →](#)
+      [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases/tag/v2024.04.19)
 ---
 
 ## Arkouda is...
@@ -67,33 +67,33 @@ announcement:
 ### Fast
 Arkouda is powered by [Chapel](https://chapel-lang.org), a programming language built from the ground up to support parallelism and distributed computing. Make the most out of every core and every node in your arsenal.
 
-[See performance results →](#)
+<!-- [See performance results →](#) -->
 {{< /rect >}}
 
 {{< rect >}}
 ### Interactive
 By distributing your data across multiple nodes, Arkouda allows you to rapidly transform and wrangle datasets in real time that are simply intractable for a laptop or desktop.
 
-[Read about Arkouda in Jupyter →](#)
+<!-- [Read about Arkouda in Jupyter →](#) -->
 {{< /rect >}}
 
 {{< rect >}}
 ### Familiar
 Arkouda's library functions deliberately mirror those of NumPy and Pandas, so you can get started with minimal learning curve.
 
-[Compare to NumPy and Dask →](#)
+<!-- [Compare to NumPy and Dask →](#) -->
 {{< /rect >}}
 
 {{< /rectlist >}}
 
 ## Arkouda users are saying...
 
-{{< quote author="Daniel Fedorin" affiliation="Hewlett Packard Enterprise" url="#" >}}
-Arkouda is my favorite breakfast meal! It's very filling and nutritious.
+{{< quote author="Scott Bachman" affiliation="NCAR" url="https://ncar.ucar.edu/" >}}
+[Arkouda] represents a paradigm shift in the way biodiversity can be measured at scale.
 {{< /quote >}}
 
-{{< quote author="Alinad Nerodef" affiliation="Airline Pilot" url="#" >}}
-I used to be afraid of bears, but the Arkouda logo convinced me to finally buy one. I'm one happy customer!
+{{< quote author="Jake Trookman" affiliation="Erias" url="#" >}}
+[I'm] working with more data than I ever thought possible as a data scientist!
 {{< /quote >}}
 
 ## With Arkouda, you can...
