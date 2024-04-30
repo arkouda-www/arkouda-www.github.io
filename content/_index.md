@@ -1,7 +1,7 @@
 ---
 title: "Arkouda"
 draft: true
-tagline: "Massive scale data science,<br> from the comfort of your laptop"
+tagline: "Massive-scale data science,<br> from the comfort of your laptop"
 codes:
   -
     name: "Arkouda"
