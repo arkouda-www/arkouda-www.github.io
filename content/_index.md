@@ -88,11 +88,11 @@ Arkouda's library functions deliberately mirror those of NumPy and Pandas, so yo
 
 ## Arkouda users are saying...
 
-{{< quote author="Scott Bachman" affiliation="NCAR" url="https://ncar.ucar.edu/" >}}
-[Arkouda] represents a paradigm shift in the way biodiversity can be measured at scale.
+{{< quote author="Tess Hayes" affiliation="Bytoa" url="" >}}
+…solving problems in a matter of seconds, as opposed to days…
 {{< /quote >}}
 
-{{< quote author="Jake Trookman" affiliation="Erias" url="#" >}}
+{{< quote author="Jake Trookman" affiliation="Erias" url="" >}}
 [I'm] working with more data than I ever thought possible as a data scientist!
 {{< /quote >}}
 
