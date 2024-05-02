@@ -59,9 +59,15 @@ h3 {
 }
 
 section {
-    max-width: $minimum-width;
-    margin: auto;
     margin-bottom: 3rem;
+
+    // Why the children instead of the section itself? So that we can control
+    // the background color of the section all the way across the screen.
+    & > * {
+        max-width: $minimum-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     @include below-container-width {
         margin-bottom: 1.5rem;
