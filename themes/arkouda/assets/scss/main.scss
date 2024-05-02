@@ -105,8 +105,7 @@ section {
             border-color: var(--primary-color);
         }
     }
-
-    .sample-wrapper {
+    .sample-wrapper-div {
         flex-basis: 0;
         flex-grow: 1;
 
@@ -119,11 +118,19 @@ section {
             border-left: 0.075rem solid grey;
         }
     }
+    .sample-wrapper {
+        max-width: 14rem; // Might need to be adjusted if text
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 
     .sample {
         display: flex;
         flex-direction: column;
-        cursor: pointer;
 
         .name {
             font-weight: bold;

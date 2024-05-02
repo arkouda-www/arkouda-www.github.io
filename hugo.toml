@@ -18,20 +18,20 @@ name = 'Gitter'
 url = 'https://gitter.im/ArkoudaProject/community'
 weight = 30
 
-[[menus.main]]
-name = 'Discourse'
-url = '#'
-weight = 40
+# [[menus.main]]
+# name = 'Discourse'
+# url = '#'
+# weight = 40
 
-[[menus.main]]
-name = 'Community'
-url = '#'
-weight = 50
+# [[menus.main]]
+# name = 'Community'
+# url = '#'
+# weight = 50
 
-[[menus.main]]
-name = 'About'
-url = '/about'
-weight = 60
+# [[menus.main]]
+# name = 'About'
+# url = '/about'
+# weight = 60
 
 [markup.goldmark.renderer]
 unsafe= true

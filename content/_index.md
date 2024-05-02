@@ -44,19 +44,19 @@ codes:
 buttons:
     - name: "Get Started"
       primary: true
-      url: "#"
+      url: "#" # TODO: put link to Arkouda Demo here
     - name: "Documentation"
-      url: "#"
+      url: "https://bears-r-us.github.io/arkouda/"
     - name: "Chat on Gitter"
       icon: "message-square"
-      url: "#"
+      url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda 3.2.6 released!"
+    title: "Arkouda v2024.04.19 released!"
     content: |
-      The new release brings the `addOne` message, which significantly speeds up increment operations on large arrays!
+      The new release brings optimized Parquet `Strings` reads, which significantly speeds up  operations on data in `.parquet` files, along with more Array API functionality!
 
-      [Read the release notes →](#)
+      [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases/tag/v2024.04.19)
 ---
 
 {{% section "arkouda-is" %}}
