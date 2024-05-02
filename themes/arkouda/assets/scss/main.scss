@@ -54,31 +54,17 @@ h2 {
     }
 }
 
-h3 {
+h2, h3 {
     font-size: 2em;
 }
 
 section {
-    margin-bottom: 3rem;
-
     // Why the children instead of the section itself? So that we can control
     // the background color of the section all the way across the screen.
     & > * {
         max-width: $minimum-width;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    @include below-container-width {
-        margin-bottom: 1.5rem;
-    }
-}
-
-section:not(section section) {
-    margin-bottom: 6rem;
-
-    @include below-container-width {
-        margin-bottom: 3rem;
     }
 }
 
@@ -95,6 +81,7 @@ section:not(section section) {
     flex-direction: column;
     align-items: stretch;
     background-color: white;
+    color: black;
 
     fieldset {
         border: none;
@@ -170,16 +157,6 @@ hr {
     margin-bottom: 1em;
 }
 
-.white-background {
-    padding-bottom: 1em;
-    background-color: white;
-    border-top: var(--border);
-
-    h2:nth-child(n+2) {
-        margin-top: 5rem;
-    }
-}
-
 .hidden {
     display: none;
 }
@@ -187,7 +164,7 @@ hr {
 a {
     text-decoration-color: var(--primary-color);
     text-decoration-thickness: 0.2em;
-    color: black;
+    color: inherit;
     text-underline-offset: 0.4em;
 }
 
@@ -195,6 +172,7 @@ a.button {
     text-decoration: none;
     padding: 0.6em;
     background-color: white;
+    color: black;
     display: inline-flex;
     align-items: center;
     font-size: 1.3em;
@@ -252,6 +230,7 @@ div.diff {
         display: block;
         line-height: 1.5;
         background-color: white;
+        color: black;
 
         &::before {
             content: '\00a0\00a0';
@@ -280,6 +259,7 @@ div.diff {
 .news-banner {
     padding: 1em;
     background-color: white;
+    color: black;
 
     @include stylized-shadow(var(--primary-color));
 }
@@ -327,6 +307,7 @@ nav {
     padding: 0.25em;
     border-radius: 25%;
     background-color: white;
+    color: black;
     border: 0.075em solid var(--border-color);
     margin-right: 0.8em;
 }
@@ -349,6 +330,8 @@ nav {
     text-align: center;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    color: black;
 
     @include stylized-shadow(whitesmoke);
     border-color: #cecece;
@@ -380,6 +363,8 @@ blockquote {
         display: flex;
         flex-direction: row;
         align-items: center;
+        background-color: white;
+        color: black;
 
         @include stylized-shadow(whitesmoke);
         border-color: #cecece;
@@ -413,6 +398,9 @@ blockquote {
 
 .block {
     padding: 1em;
+    background-color: white;
+    color: black;
+    margin-bottom: 3rem;
 
     @include stylized-shadow(whitesmoke);
     border-color: lightgrey;
@@ -438,4 +426,22 @@ section#draft {
     border-radius: 0.5em;
     margin-top: 2em;
     margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $minimum-width;
+}
+
+section.after-tagline {
+    &:nth-child(4n+1), &:nth-child(4n+2) {
+        background-color: white;
+        padding: 0.5em;
+    }
+
+    &:nth-child(4n+1), &:nth-child(4n+3) {
+        margin-top: 6rem;
+    }
+
+    &:nth-child(4n+3), &:nth-child(4n+4) {
+        color: white;
+    }
 }
