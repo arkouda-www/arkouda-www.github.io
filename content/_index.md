@@ -44,9 +44,9 @@ codes:
 buttons:
     - name: "Get Started"
       primary: true
-      url: "#" # TODO: put link to Arkouda Demo here
-    - name: "Documentation"
-      url: "https://bears-r-us.github.io/arkouda/"
+      url: "https://github.com/bmcdonald3/chapelcon-2024-arkouda"
+    - name: "Tutorial Video"
+      url: "https://www.youtube.com/watch?v=__pXYW359Ws"
     - name: "Chat on Gitter"
       icon: "message-square"
       url: "https://gitter.im/ArkoudaProject/community"
@@ -65,7 +65,7 @@ announcement:
 
 {{< rect >}}
 ### Fast
-Arkouda is powered by [Chapel](https://chapel-lang.org), a programming language built from the ground up to support parallelism and distributed computing. Make the most out of every core and every node in your arsenal.
+Arkouda is powered by [Chapel](https://chapel-lang.org), a programming language built from the ground up to support parallelism and distributed computing. Make the most out of every core and every node in your system.
 
 <!-- [See performance results →](#) -->
 {{< /rect >}}
@@ -77,12 +77,19 @@ By distributing your data across multiple nodes, Arkouda allows you to rapidly t
 <!-- [Read about Arkouda in Jupyter →](#) -->
 {{< /rect >}}
 
-{{< rect >}}
+<!--{{< rect >}}
 ### Familiar
 Arkouda's library functions deliberately mirror those of NumPy and Pandas, so you can get started with minimal learning curve.
 
-<!-- [Compare to NumPy and Dask →](#) -->
+[Compare to NumPy and Dask →](#)
+{{< /rect >}}-->
+
+{{< rect >}}
+### Extensible
+One can expand on Arkouda’s capabilities by creating specialized functions, thus enabling more access to distributed high performance from Python.
+
 {{< /rect >}}
+
 
 {{< /rectlist >}}
 
@@ -105,15 +112,15 @@ Arkouda's library functions deliberately mirror those of NumPy and Pandas, so yo
 
 Source: [Arkouda `argsort` Benchmark](https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03)
 
-Hardware Configuration: [HPE SGI 8600](https://buy.hpe.com/us/en/compute/sgi-system/sgi-8600-system/sgi-8600-system/hpe-sgi-8600-system/p/1010032504):
+Hardware Configuration: HPE SGI 8600:
 * EDR-100 InfiniBand network
 * 40-core Cascade Lake (dual-socket Intel Xeon Gold 6242R)
 * 192 GB RAM
 {{< /block >}}
 
 {{< block >}}
-### Interactively analyze large datasets
-By distributing your data across multiple nodes, Arkouda allows you to rapidly transform and wrangle datasets that are simply intractable for a laptop or desktop.
+### Do Exploratory Data Analysis (EDA) on large to massive datasets
+No other data analysis tool can sort or groupby massive data as effectively as Arkouda.  When running on more than 8000 nodes, Arkouda can sort data at a rate of over 8 TB/s.
 
 {{< figure src="./arkouda-process.svg" >}}
 {{< /block >}}
