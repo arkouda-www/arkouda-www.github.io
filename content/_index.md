@@ -44,9 +44,9 @@ codes:
 buttons:
     - name: "Get Started"
       primary: true
-      url: "#" # TODO: put link to Arkouda Demo here
-    - name: "Documentation"
-      url: "https://bears-r-us.github.io/arkouda/"
+      url: "https://github.com/bmcdonald3/chapelcon-2024-arkouda"
+    - name: "Tutorial Video"
+      url: "https://www.youtube.com/watch?v=__pXYW359Ws"
     - name: "Chat on Gitter"
       icon: "message-square"
       url: "https://gitter.im/ArkoudaProject/community"
