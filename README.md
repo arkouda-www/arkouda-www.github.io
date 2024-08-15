@@ -45,10 +45,12 @@ look like this:
 
 ## Editing the Site
 
-Generally, each page on the site has a corresponding Markdown file. For the
-landing page (which is currently the only page on the site), this Markdown
-file is `content/_index.md`. Thus, to edit things like the quotes, graphs,
-and other text on the landing page, you'll want to edit this file.
+Generally, each part on the site has a corresponding Markdown file. The
+sections on the main page each have their own file; for instance, the section
+of quotes from Arkouda users is in `content/sections/quotes.md`.
+To edit things like the quotes, graphs, and other text on the landing page,
+you'll want to edit their files. The `content/sections` folder contains
+the sectons on the main page (which is currently the only page on the site).
 
 Another file plays a role in what gets displayed on the screen: `hugo.toml`.
 This file is intended for editing things that show up across the entire site.
@@ -64,7 +66,7 @@ should look at.
 |--------------------------------------------------|----------------------------------------------|--------------|
 | The navigation buttons at the top                | `hugo.toml`                                  | [Editing Hugo.toml](#editing-hugotoml) |
 | The big tagline, code blocks, or buttons         | `content/_index.md`, above the `---` divider | [Editing the Front Matter](#editing-the-front-matter) |
-| The quotes, quick summary, or the lower sections | `content/_index.md`, below the `---` divider | [Editing the Markdown Content](#editing-the-markdown-content) |
+| The quotes, quick summary, or the lower sections | files in `content/sections`                  | [Editing the Markdown Content](#editing-the-markdown-content) |
 
 ### Editing `hugo.toml`
 
@@ -108,7 +110,8 @@ add new links, add a new 4-line entry with the desired name, URL, and weight.
 ### Editing the Front Matter
 
 _Note:_ This section and the next explain how to modify the `content/_index.md`
-file; modifying this file only affects the landing page._
+file and other files it pulls in; modifying this file only affects the landing
+page._
 
 Hugo pages are written using Markdown. However, they can also carry some
 meta-data that describes the page. This metadata includes the title of the
@@ -239,6 +242,8 @@ the latest / most important one. Announcements only have two keys:
 
 After the code block, buttons, and announcement sections, the rest of the
 site is written using Markdown, with a handful of Hugo-specific extensions.
+The markdown files that affect the main page are included using code like
+`{{% section "arkouda-is" %}}` and bring in files from `content/sections`.
 
 #### Intro to Shortcodes
 
@@ -252,7 +257,7 @@ feature", or "quote with attribution and link".
 To bridge the gap between what needs to be displayed on the website -- which
 includes all the things in the previous paragraph -- and what can be written
 in Markdown, Hugo introduces shortcodes. For instance, here's an example
-of how quotes are written in the `content/_index.md` file:
+of how quotes are written in the `content/sections/quoes.md` file:
 
 ```
 {{< quote author="Daniel Fedorin" affiliation="Hewlett Packard Enterprise" url="#" >}}
@@ -316,48 +321,30 @@ I am another rect that's inside a rectlist
 
 #### Editing Sections
 
-Reach major section on the site starts with a `## ` -- its title. This is standard
-Markdown for "second level heading" (lower level means bigger heading). The
-tagline is currently the biggest heading ("first level").
+Each section on the main page is stored in its own file. For instance,
+the quotes section is stored in `content/sections/quotes.md`. To edit that
+section, you should edit the corresponding markdown file. All sections are
+"brought in" in the `content/_index.md` file using the `section` shortcode;
+at the time of writing, this looks as follows:
+
+```Markdown
+{{% section "arkouda-is" %}}
+{{% section "quotes" %}}
+{{% section "you-can" %}}
+```
+
+Within each section file, the first piece is the section's name prefaced by `## `
+-- its title. This is standard Markdown for "second level heading"
+(lower level means bigger heading). The tagline is currently the biggest
+heading ("first level").
 
 To edit the title of the section, simply edit the text that follows the
-`## `. To reorder sections, move the title and the lines below it (up to
-the next `## `) into a different location. E.g., suppose you have the
-following:
-
-```Markdown
-## Section A
-
-Contents of section A...
-
-{{< rect }}
-Maybe even a rect!
-{{< /rect >}}
-
-## Section B
-
-Contents of section B...
-```
-
-To move Section A below Section B:
-
-```Markdown
-## Section B
-
-Contents of section B...
-
-## Section A
-
-Contents of section A...
-
-{{< rect }}
-Maybe even a rect!
-{{< /rect >}}
-```
+`## `. To reorder sections, simply change the order of the `section` shortcodes
+in the `_index.md` file.
 
 Within some sections (currently, "With Arkouda, you can..."), blocks
 are used to visually distinguish parts of the page from each other. This
 is done using the `block` shortcode.
 
 Otherwise, you can generally edit a piece of text by finding that
-piece of text in the `_index.md` file, and modifying it as desired.
+piece of text in the section's Markdown file, and modifying it as desired.
