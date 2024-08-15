@@ -3,7 +3,7 @@
 {{< block >}}
 ### Make the most of your hardware
 
-{{< graph >}}
+{{< graph "scaling" >}}
 
 Source: [Arkouda `argsort` Benchmark](https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03)
 
