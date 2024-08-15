@@ -26,16 +26,17 @@ Arkouda's library functions deliberately mirror those of NumPy and Pandas, so yo
 
 {{< diff >}}
  # Generate two large arrays
--a = np.random.randint(0,2**32,2**10)
--b = np.random.randint(0,2**32,2**10)
-+a = ak.randint(0,2**32,2**10)
-+b = ak.randint(0,2**32,2**10)
+-a = np.random.randint(0,2**32,2**28)
+-b = np.random.randint(0,2**32,2**28)
++a = ak.randint(0,2**32,2**38)
++b = ak.randint(0,2**32,2**38)
 
  # add them
  c = a + b
 
  # Sort the array and print first 10 elements
- ak.sort(c)
+-np.ndarray.sort(c)
++ak.sort(c)
  print(c[0:10])
 {{< /diff >}}
 {{< /block >}}

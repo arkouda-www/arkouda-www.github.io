@@ -12,8 +12,8 @@ codes:
       ak.startup('localhost', 5555)
 
       # Generate two large arrays
-      a = ak.randint(0,2**32,2**10)
-      b = ak.randint(0,2**32,2**10)
+      a = ak.randint(0,2**32,2**38) # ----> Won't fit on a single machine!
+      b = ak.randint(0,2**32,2**38) # /     1TB of random integers.
 
       # add them
       c = a + b
@@ -31,20 +31,20 @@ codes:
 
 
       # Generate two large arrays
-      a = np.random.randint(0,2**32,2**10)
-      b = np.random.randint(0,2**32,2**10)
+      a = np.random.randint(0,2**32,2**28) # ----> smaller to fit on a single machine
+      b = np.random.randint(0,2**32,2**28) # /
 
       # add them
       c = a + b
 
       # Sort the array and print first 10 elements
-      ak.sort(c)
+      np.ndarray.sort(c)
       print(c[0:10])
 
 buttons:
-    - name: "Get Started"
+    - name: "Try it Out"
       primary: true
-      url: "https://github.com/bmcdonald3/chapelcon-2024-arkouda"
+      url: "https://github.com/bmcdonald3/chapelcon-2024-arkouda#readme"
     - name: "Tutorial Video"
       url: "https://www.youtube.com/watch?v=__pXYW359Ws"
     - name: "Chat on Gitter"
