@@ -1,4 +1,4 @@
 <canvas id="scaling-graph"></canvas>
 <script>
-loadGraph("scaling-graph");
+  loadGraph("scaling-graph", "{{ .Site.BaseURL }}/graphs/{{ .Get 0 }}.json");
 </script>
