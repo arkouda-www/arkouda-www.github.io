@@ -25,7 +25,7 @@ Arkouda's library functions deliberately mirror those of NumPy and Pandas, so yo
 
 {{< rect >}}
 ### Extensible
-One can expand on Arkouda’s capabilities by creating specialized functions, thus enabling more access to distributed high performance from Python.
+One can expand on Arkouda’s capabilities, thus enabling arbitrary scalable computations to be performed from Python.
 
 {{< /rect >}}
 {{< /rectlist >}}

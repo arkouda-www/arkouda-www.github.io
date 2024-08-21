@@ -15,7 +15,7 @@ Hardware Configuration: HPE SGI 8600:
 
 {{< block >}}
 ### Do Exploratory Data Analysis (EDA) on large to massive datasets
-No other data analysis tool can sort or groupby massive data as effectively as Arkouda.  When running on more than 8000 nodes, Arkouda can sort data at a rate of over 8 TB/s.
+No other data analysis tool can sort or group by massive data as effectively as Arkouda.  For example, Arkouda has proven to be able to sort data at 8+ TB/s using 8k compute nodes.  Whenever your dataset sizes exceed what you can fit on a single node, you're likely to get benefit from Arkouda.
 
 {{< figure src="./arkouda-process.svg" >}}
 {{< /block >}}

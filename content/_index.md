@@ -51,11 +51,11 @@ buttons:
       url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda v2024.04.19 released!"
+    title: "Arkouda v2024.06.21 released!"
     content: |
-      The new release brings optimized Parquet `Strings` reads, which significantly speeds up  operations on data in `.parquet` files, along with more Array API functionality!
+      The new release includes improvements to the Array API implementation, which enables Arkouda arrays to provide distributed arrays for use in tools like XArray.
 
-      [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases/tag/v2024.04.19)
+      [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases)
 ---
 
 {{% section "arkouda-is" %}}
