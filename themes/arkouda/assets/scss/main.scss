@@ -340,8 +340,8 @@ nav {
     background-color: white;
     color: black;
 
-    @include stylized-shadow(whitesmoke);
-    border-color: #cecece;
+    @include stylized-shadow(var(--button-color));
+    border-color: var(--border-color);
 
     h3 {
         margin-top: 0.6em;
@@ -373,8 +373,8 @@ blockquote {
         background-color: white;
         color: black;
 
-        @include stylized-shadow(whitesmoke);
-        border-color: #cecece;
+        @include stylized-shadow(var(--button-color))
+        border-color: var(--border-color);
     }
 
     div.quote-content {
@@ -409,8 +409,8 @@ blockquote {
     color: black;
     margin-bottom: 3rem;
 
-    @include stylized-shadow(whitesmoke);
-    border-color: lightgrey;
+    @include stylized-shadow(var(--button-color));
+    border-color: var(--border-color);
 
     h3 {
         margin-top: 0.6em;
@@ -440,8 +440,10 @@ section#draft {
 
 section.after-tagline {
     &:nth-child(4n+1), &:nth-child(4n+2) {
-        background-color: white;
+        background-color: whitesmoke;
         padding: 0.5em;
+        --border-color: #cecece;
+        --button-color: #cecece;
     }
 
     &:nth-child(4n+1), &:nth-child(4n+3) {

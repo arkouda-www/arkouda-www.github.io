@@ -11,8 +11,8 @@ codes:
       ak.startup('localhost', 5555)
 
       # Generate two large arrays
-      a = ak.randint(0,2**32,2**38) # ----> Won't fit on a single machine!
-      b = ak.randint(0,2**32,2**38) # /     1TB of random integers.
+      a = ak.randint(0,2**32,2**38)        # ----> Won't fit on a single machine!
+      b = ak.randint(0,2**32,2**38)        #       1TB of random integers.
 
       # add them
       c = a + b
@@ -31,7 +31,7 @@ codes:
 
       # Generate two large arrays
       a = np.random.randint(0,2**32,2**28) # ----> smaller to fit on a single machine
-      b = np.random.randint(0,2**32,2**28) # /
+      b = np.random.randint(0,2**32,2**28)
 
       # add them
       c = a + b
