@@ -1,5 +1,5 @@
 <section class="after-tagline">
 {{ with site.GetPage (printf "sections/%s.md" (.Get 0)) }}
-  {{ .RenderShortcodes }}
+  {{ .Content }}
 {{ end }}
 </section>
