@@ -14,8 +14,8 @@ codes:
       ak.connect('localhost', 5555)
 
       # Generate two large arrays
-      a = ak.random.randint(0,2**32,2**38)        # ----> Won't fit on a single machine!
-      b = ak.random.randint(0,2**32,2**38)        #       1TB of random integers.
+      a = ak.random.randint(0,2**32,2**38) # ----> Won't fit on a single machine!
+      b = ak.random.randint(0,2**32,2**38) #       1TB of random integers.
 
       # add them
       c = a + b
@@ -31,7 +31,6 @@ codes:
 
 
       import numpy as np
-
 
 
 
