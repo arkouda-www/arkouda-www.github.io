@@ -14,14 +14,14 @@ codes:
       ak.connect('localhost', 5555)
 
       # Generate two large arrays
-      a = ak.randint(0,2**32,2**38)        # ----> Won't fit on a single machine!
-      b = ak.randint(0,2**32,2**38)        #       1TB of random integers.
+      a = ak.random.randint(0,2**32,2**38)        # ----> Won't fit on a single machine!
+      b = ak.random.randint(0,2**32,2**38)        #       1TB of random integers.
 
       # add them
       c = a + b
 
       # Sort the array and print first 10 elements
-      ak.sort(c)
+      c = ak.sort(c)
       print(c[0:10])
 
   -
@@ -44,7 +44,7 @@ codes:
       c = a + b
 
       # Sort the array and print first 10 elements
-      np.ndarray.sort(c)
+      c = np.sort(c)
       print(c[0:10])
 
 buttons:
