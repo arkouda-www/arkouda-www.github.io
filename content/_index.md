@@ -6,9 +6,12 @@ codes:
     name: "Arkouda"
     title: "Ready for supercomputers"
     code: |
+      # Launch an Arkouda server: ./arkouda_server -nl <number-of-locales>
+
       import arkouda as ak
 
-      ak.startup('localhost', 5555)
+      # connect to the server
+      ak.connect('localhost', 5555)
 
       # Generate two large arrays
       a = ak.randint(0,2**32,2**38)        # ----> Won't fit on a single machine!
@@ -25,7 +28,11 @@ codes:
     name: "NumPy"
     title: "Industry standard"
     code: |
+
+
       import numpy as np
+
+
 
 
 
