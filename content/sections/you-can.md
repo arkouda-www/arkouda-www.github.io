@@ -5,12 +5,10 @@
 
 {{< graph "scaling" >}}
 
-Source: [Arkouda `argsort` Benchmark](https://github.com/Bears-R-Us/arkouda/tree/master/runs/ronawho-2022-10-03)
+Source: Arkouda `argsort` Benchmark
 
-Hardware Configuration: HPE SGI 8600:
-* EDR-100 InfiniBand network
-* 40-core Cascade Lake (dual-socket Intel Xeon Gold 6242R)
-* 192 GB RAM
+Hardware: HPE Cray EX with a Slingshot-11 network (200 Gb/s)
+
 {{< /block >}}
 
 {{< block >}}

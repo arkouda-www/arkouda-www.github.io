@@ -21,6 +21,7 @@ function setupCodeSample(id) {
 }
 
 function loadGraph(id, file) {
+  Chart.defaults.font.size = 20;
   const scalingGraph = document.getElementById(id);
   fetch(file)
         .then(response => response.json())
