@@ -348,3 +348,4 @@ is done using the `block` shortcode.
 
 Otherwise, you can generally edit a piece of text by finding that
 piece of text in the section's Markdown file, and modifying it as desired.
+
