@@ -170,9 +170,9 @@ hr {
 
 a {
     text-decoration-color: var(--primary-color);
-    text-decoration-thickness: 0.2em;
+    text-decoration-thickness: 0.1em;
     color: inherit;
-    text-underline-offset: 0.4em;
+    text-underline-offset: 0.2em;
 }
 
 a.button {
@@ -453,4 +453,14 @@ section.after-tagline {
     &:nth-child(4n+3), &:nth-child(4n+4) {
         color: white;
     }
+}
+
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+
+  .side {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 }

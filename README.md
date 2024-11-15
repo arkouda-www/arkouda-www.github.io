@@ -17,10 +17,10 @@ With Git in hand, you can download the repository with the following command:
 
 ```bash
 # Use Git to download the repository
-git clone https://github.com/DanilaFe/arkouda-website.git
+git clone https://github.com/arkouda-www/arkouda-www.github.io.git
 
 # Move to the repository when running subsequent commands
-cd arkouda-website
+cd arkouda-www.github.io
 ```
 
 After the above commands, you have the files necessary to build the blog.

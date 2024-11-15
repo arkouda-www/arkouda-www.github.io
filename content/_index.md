@@ -57,13 +57,14 @@ buttons:
       url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda v2024.06.21 released!"
+    title: "Arkouda v2024.10.02 released!"
     content: |
-      The new release includes improvements to the Array API implementation, which enables Arkouda arrays to provide distributed arrays for use in tools like XArray.
+      The new release includes faster Parquet I/O, initial support for sparse matrices, Random module improvements towards numpy alignment, and many bug fixes.
 
       [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases)
 ---
 
 {{% section "arkouda-is" %}}
+{{% section "powered-by-chapel" %}}
 {{% section "quotes" %}}
 {{% section "you-can" %}}
