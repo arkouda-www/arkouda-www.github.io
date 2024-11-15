@@ -6,7 +6,7 @@ Arkouda's backend is implemented in [Chapel](https://chapel-lang.org), an
 open-source parallel programming language. Chapel is unique among mainstream
 languages as it puts parallelism and locality in the forefront, while not
 sacrificing productivity or portability.  Chapel enables Arkouda to perform well
-and scale on many different architectures, including multicore laptops to cloud
+and scale on many different architectures, from multicore laptops to cloud
 systems to world's fastest supercomputers.
 
 To learn more about Chapel, check out [its
