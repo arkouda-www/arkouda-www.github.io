@@ -57,9 +57,10 @@ buttons:
       url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda v2024.10.02 released!"
+    title: "Arkouda v2024.12.06 released!"
     content: |
-      The new release includes faster Parquet I/O, initial support for sparse matrices, Random module improvements towards numpy alignment, and many bug fixes.
+      The new release includes a refactored server making it easier to add new features, more Sparse Matrix fucntionality, new pdarray
+      manipulation functions, and bug fixes.
 
       [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases)
 ---
