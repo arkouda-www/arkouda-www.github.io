@@ -57,10 +57,11 @@ buttons:
       url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda v2024.12.06 released!"
+    title: "Arkouda v2025.01.13 released!"
     content: |
-      The new release includes a refactored server making it easier to add new features, more Sparse Matrix fucntionality, new pdarray
-      manipulation functions, and bug fixes.
+      The new release includes new functionality to inquire communication
+      performance of the server, ability to build Arkouda offline, and several
+      bug fixes.
 
       [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases)
 ---
