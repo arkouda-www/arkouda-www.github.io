@@ -57,13 +57,14 @@ buttons:
       url: "https://gitter.im/ArkoudaProject/community"
 
 announcement:
-    title: "Arkouda v2025.01.13 released!"
+    title: "Read Arkouda co-inventor Bill Reus's interview!"
     content: |
-      The new release includes new functionality to inquire communication
-      performance of the server, ability to build Arkouda offline, and several
-      bug fixes.
+      As part of the [7 Questions for Chapel
+      Users](https://chapel-lang.org/blog/series/7-questions-for-chapel-users/)
+      interview series, Arkouda co-inventor Bill Reus gave a great historical
+      perspective on Arkouda's beginnings.
 
-      [Read the release notes →](https://github.com/Bears-R-Us/arkouda/releases)
+      [Read the interview →](https://chapel-lang.org/blog/posts/7qs-reus/)
 ---
 
 {{% section "arkouda-is" %}}
