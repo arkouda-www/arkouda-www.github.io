@@ -14,8 +14,8 @@ url = 'https://bears-r-us.github.io/arkouda/'
 weight = 20
 
 [[menus.main]]
-name = 'Gitter'
-url = 'https://gitter.im/ArkoudaProject/community'
+name = 'Download'
+url = 'https://github.com/Bears-R-Us/arkouda/releases'
 weight = 30
 
 # [[menus.main]]
